@@ -2,7 +2,10 @@ window.onload = function() {
 
   var buttons = document.getElementsByClassName("clickable");
 
-  
+  //Home page selector
+
+  if(window.location.pathname=='/home/benjamin/Projects/Week2/wk2-website/index.html') {
+
   Array.from(buttons).forEach(function(element) {
         element.onclick = function() {
 
@@ -40,5 +43,45 @@ window.onload = function() {
           }
         };
       });
+};
 
+  //Amino Acid Selector
+
+  if(window.location.pathname == '/home/benjamin/Projects/Week2/wk2-website/pages/aminoacids.html') {
+
+  Array.from(buttons).forEach(function(element) {
+        element.onclick = function() {
+
+  	var imageAaSwap = document.getElementById("image-aa-swap");
+
+ 		var titleAaSwap = document.getElementById("title-aa-swap");
+
+ 		var paragraphAaSwap = document.getElementById("paragraph-aa-swap");
+
+ 		var codeAaSwap = document.getElementById("code-aa-swap");
+
+ 		var formulaAaSwap = document.getElementById("formula-aa-swap");
+
+ 		var weightAaSwap = document.getElementById("weight-aa-swap");
+
+ 		var polarityAaSwap = document.getElementById("polarity-aa-swap");
+
+ 		titleAaSwap.innerHTML = element.innerHTML;
+
+ 		imageAaSwap.setAttribute("src", "../images/" + element.innerHTML.toLowerCase() + ".png");
+
+ 		codeAaSwap.innerHTML = document.getElementById(element.innerHTML+"-code").innerHTML;
+
+ 		formulaAaSwap.innerHTML = document.getElementById(element.innerHTML+"-formula").innerHTML;
+
+ 		weightAaSwap.innerHTML = document.getElementById(element.innerHTML+"-weight").innerHTML;
+
+ 		polarityAaSwap.innerHTML = document.getElementById(element.innerHTML+"-polarity").innerHTML;
+
+ 		paragraphAaSwap.innerHTML = document.getElementById(element.innerHTML+"-paragraph").innerHTML;
+
+   }
+  });
+
+};
 }
